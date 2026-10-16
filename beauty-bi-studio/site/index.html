@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beauty Bi Studio — салон красоты в Бишкеке</title>
+  <meta name="description" content="Beauty Bi Studio, Бишкек: эпиляция, маникюр, педикюр, ресницы, брови, массаж, волосы. Ежедневно с 9:00 до 20:00. Онлайн-запись через WhatsApp.">
+  <meta name="theme-color" content="#f4efe9">
+  <meta property="og:title" content="Beauty Bi Studio — салон красоты в Бишкеке">
+  <meta property="og:description" content="Цены на услуги и онлайн-запись через WhatsApp.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+  <a class="brand" href="#top" aria-label="Beauty Bi Studio — на главную">
+    <img src="assets/logo.png" alt="" width="44" height="44">
+    <span>Beauty Bi Studio</span>
+  </a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#prices">Цены</a>
+    <a href="#booking">Запись</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn btn-small btn-ink" href="#booking">Записаться</a>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-place">Салон красоты · Бишкек</p>
+      <h1>Beauty Bi<br>Studio</h1>
+      <p class="hero-lead">Эпиляция, маникюр, брови и ресницы, массаж и уход за волосами в одном месте.</p>
+      <div class="hero-actions">
+        <a class="btn btn-ink" href="#booking">Записаться онлайн</a>
+        <a class="btn btn-line" href="https://2gis.kg/bishkek/geo/15763234351105098/74.611606,42.864498" target="_blank" rel="noopener">Как добраться в 2ГИС</a>
+      </div>
+      <p class="status" id="status" aria-live="polite">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">Ежедневно с 9:00 до 20:00</span>
+      </p>
+    </div>
+    <div class="hero-logo">
+      <img src="assets/logo.png" alt="Логотип Beauty Bi Studio" width="400" height="400">
+    </div>
+  </section>
+
+  <section class="section" id="prices" aria-labelledby="pricesTitle">
+    <div class="section-head">
+      <h2 id="pricesTitle">Цены на услуги</h2>
+      <p>Нажмите на услугу, и она сразу появится в форме записи.</p>
+    </div>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Категории услуг"></div>
+    <div class="price-panel" id="pricePanel" role="tabpanel"></div>
+  </section>
+
+  <section class="section booking" id="booking" aria-labelledby="bookingTitle">
+    <div class="booking-inner">
+      <div class="booking-copy">
+        <h2 id="bookingTitle">Запись на услугу</h2>
+        <p>Выберите услугу, дату и время. По кнопке откроется WhatsApp с готовым сообщением, останется только отправить.</p>
+        <p class="booking-hours">Работаем ежедневно с 9:00 до 20:00.<br>Последняя запись на 19:00.</p>
+      </div>
+
+      <div class="booking-form" id="bookingForm" role="group" aria-label="Форма записи">
+        <div class="field">
+          <label for="name">Ваше имя</label>
+          <input id="name" type="text" autocomplete="given-name" placeholder="Например, Айдана">
+          <span class="error" id="errName"></span>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="category">Категория</label>
+            <select id="category"></select>
+          </div>
+          <div class="field">
+            <label for="service">Услуга</label>
+            <select id="service"></select>
+            <span class="error" id="errService"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="date">Дата</label>
+          <input id="date" type="date">
+          <span class="error" id="errDate"></span>
+        </div>
+
+        <div class="field">
+          <span class="label" id="timeLabel">Время</span>
+          <div class="slots" id="slots" role="radiogroup" aria-labelledby="timeLabel"></div>
+          <span class="error" id="errTime"></span>
+        </div>
+
+        <div class="field">
+          <label for="comment">Комментарий <small>(необязательно)</small></label>
+          <textarea id="comment" rows="2" placeholder="Пожелания или вопросы мастеру"></textarea>
+        </div>
+
+        <div class="summary" id="summary" aria-live="polite">Выберите услугу, дату и время.</div>
+
+        <button class="btn btn-wa" id="submitBtn" type="button">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 9.500c.5 2 2.500 4 5 5l1.500-1.500-2-1-1 .8c-.8-.4-1.500-1.100-1.900-1.900l.8-1-1-2z"/></svg>
+          Записаться в WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts" aria-labelledby="contactsTitle">
+    <div class="section-head">
+      <h2 id="contactsTitle">Контакты</h2>
+    </div>
+    <div class="contacts">
+      <dl class="contact-list">
+        <div><dt>Адрес</dt><dd>Бишкек, улица Жусупа Абдрахманова, 409</dd></div>
+        <div><dt>Часы работы</dt><dd>Ежедневно, 9:00–20:00</dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/996557520120">+996 557 520 120</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://instagram.com/beautybi_studio" target="_blank" rel="noopener">@beautybi_studio</a></dd></div>
+      </dl>
+      <div class="contact-actions">
+        <a class="btn btn-ink" href="https://2gis.kg/bishkek/geo/15763234351105098/74.611606,42.864498" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+        <a class="btn btn-line" href="https://wa.me/996557520120" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img src="assets/logo.png" alt="" width="36" height="36">
+  <p>© <span id="year">2026</span> Beauty Bi Studio, Бишкек</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/996557520120" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 9.500c.5 2 2.500 4 5 5l1.500-1.500-2-1-1 .8c-.8-.4-1.500-1.100-1.900-1.900l.8-1-1-2z"/></svg>
+</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
